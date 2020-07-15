@@ -20,7 +20,7 @@ router.post("/create", function(req, res) {
         function createSuccess(user) {
             let token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
 
-            res.json({
+            res.json({  
                 user: user,
                 message: "User successfully created!",
                 sessionToken: token
